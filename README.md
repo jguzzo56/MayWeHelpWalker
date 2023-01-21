@@ -13,3 +13,6 @@ $ git remote add origin https://github.com/jguzzo56/MayWeHelpWalker.git <br />
 $ git add . <br />
 $ git commit -m "commit message" <br />
 $ git push origin main <br />
+
+Commands to pull: <br />
+$ git pull <br />
