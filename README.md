@@ -2,17 +2,19 @@
 
 Repository for the May We Help visually impaired walker
 
-Download Git Bash to commit changes locally <br />
-Download the .zip from https://github.com/jguzzo56/MayWeHelpWalker <br />
-CD to that folder once unzipped <br />
+WalkerCode.py is the main program for the walker. 
+MotorVibrationsTests.py is to test different motor vibrations and strenghts.
+TestAudio.py is to test different audio files.
 
-If you have one of the JetBrains IDEs installed, you should be able to push/pull from the application. If not, you can do it from the Git Bash CLI <br />
+Launcher.bash is a bash script to run the WalkerCode.py file on startup.
+A small change to the Pi's system is needed in order for it to work. In a terminal window, type:
+sudo crontab -e
 
-Commands to commit: <br />
-$ git remote add origin https://github.com/jguzzo56/MayWeHelpWalker.git <br />
-$ git add . <br />
-$ git commit -m "commit message" <br />
-$ git push origin main <br />
+Scroll all the way to the bottom of the file, and add the following line:
+@reboot bash /home/raspberrypi/Desktop/Spring2023/Launcher.bash >home/raspberrypi/logs/cronlog 2>&1
 
-Commands to pull: <br />
-$ git pull <br />
+Save the file. When the Raspberry Pi boots up, the WalkerCode.py file should run.
+
+To see a log of the WalkerCode.py's output when it runs on startup, type in a terminal window:
+cd logs
+cat cronlog
